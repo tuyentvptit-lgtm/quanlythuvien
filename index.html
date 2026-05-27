@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+    <!-- HEADER -->
+  <div class="header">
+    <h1>📚 Quản Lý Thư Viện</h1>
+    <span>JavaScript Project</span>
+  </div>
+  <div class="main">
+    <div>
+      <div class="card">
+        <h2>➕ Thêm sách mới</h2>
+ 
+        <label for="inputTen">Tên sách</label>
+        <input type="text" id="inputTen" placeholder="Nhập tên sách..." />
+ 
+        <label for="inputTacGia">Tác giả</label>
+        <input type="text" id="inputTacGia" placeholder="Nhập tên tác giả..." />
+ 
+        <label for="inputTheLoai">Thể loại</label>
+        <input type="text" id="inputTheLoai" placeholder="VD: Tiểu thuyết, CNTT..." />
+ 
+        <label for="inputNam">Năm xuất bản</label>
+        <input type="number" id="inputNam" placeholder="VD: 2023" />
+ 
+        <button id="btnThem">+ Thêm vào thư viện</button>
+ 
+        <div id="thongBao"></div>
+      </div>
+    </div>
+ 
+    <div style="display: flex; flex-direction: column; gap: 1rem;">
+ 
+      <div class="stats">
+        <div class="stat">
+          <div class="num" id="tongSach">0</div>
+          <div class="lbl">Tổng sách</div>
+        </div>
+        <div class="stat">
+          <div class="num" id="tongTheLoai">0</div>
+          <div class="lbl">Thể loại</div>
+        </div>
+      </div>
+ 
+      <div class="card">
+        <h2>📋 Danh sách sách</h2>
+ 
+        <div class="search-wrap">
+          <input
+            type="text"
+            id="inputTimKiem"
+            placeholder="🔍 Tìm theo tên sách hoặc tác giả..."
+          />
+        </div>
+ 
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Tên sách</th>
+              <th>Tác giả</th>
+              <th>Thể loại</th>
+              <th>Năm</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="bangSach">
+            <tr>
+              <td colspan="6" class="empty">Chưa có sách nào. Hãy thêm sách mới!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+ 
+    </div>
+  </div>
+ 
+  <script src="app.js"></script>
+</body>
+</html>

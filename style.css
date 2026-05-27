@@ -1,0 +1,230 @@
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+ 
+    body {
+      font-family: Georgia, serif;
+      background: #f5f0e8;
+      color: #2c2416;
+    }
+ 
+    /* ===== HEADER ===== */
+    .header {
+      background: #2c2416;
+      color: #f5f0e8;
+      padding: 1.2rem 2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+ 
+    .header h1 {
+      font-size: 22px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+ 
+    .header span {
+      font-size: 13px;
+      color: #a89070;
+      margin-left: auto;
+    }
+ 
+    /* ===== LAYOUT CHÍNH: 2 cột ===== */
+    .main {
+      display: grid;
+      grid-template-columns: 320px 1fr; /* cột trái cố định 320px, cột phải tự giãn */
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      max-width: 1000px;
+    }
+ 
+    /* ===== CARD (hộp trắng) ===== */
+    .card {
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #d4c9b0;
+      padding: 1.25rem;
+    }
+ 
+    .card h2 {
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b5a3e;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+ 
+    /* ===== FORM THÊM SÁCH ===== */
+    label {
+      display: block;
+      font-size: 13px;
+      color: #6b5a3e;
+      margin-top: 12px;
+      margin-bottom: 4px;
+    }
+ 
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #d4c9b0;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #faf8f4;
+      color: #2c2416;
+      outline: none;
+    }
+ 
+    input:focus {
+      border-color: #c8a96e;
+    }
+ 
+    /* Nút Thêm sách */
+    #btnThem {
+      width: 100%;
+      margin-top: 1rem;
+      padding: 10px;
+      background: #2c2416;
+      color: #f5f0e8;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+ 
+    #btnThem:hover {
+      background: #4a3c28;
+    }
+ 
+    /* ===== THỐNG KÊ ===== */
+    .stats {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+ 
+    .stat {
+      flex: 1;
+      background: #faf8f4;
+      border: 1px solid #d4c9b0;
+      border-radius: 6px;
+      padding: 10px;
+      text-align: center;
+    }
+ 
+    .stat .num {
+      font-size: 22px;
+      font-weight: 500;
+      color: #2c2416;
+    }
+ 
+    .stat .lbl {
+      font-size: 11px;
+      color: #6b5a3e;
+      margin-top: 2px;
+    }
+ 
+    /* ===== Ô TÌM KIẾM ===== */
+    .search-wrap {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+ 
+    #inputTimKiem {
+      flex: 1;
+      padding: 8px 10px;
+      border: 1px solid #d4c9b0;
+      border-radius: 6px;
+      font-size: 14px;
+      background: #faf8f4;
+      outline: none;
+    }
+ 
+    #inputTimKiem:focus {
+      border-color: #c8a96e;
+    }
+ 
+    /* ===== BẢNG DANH SÁCH ===== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+ 
+    th {
+      text-align: left;
+      padding: 8px 10px;
+      background: #faf8f4;
+      border-bottom: 1px solid #d4c9b0;
+      color: #6b5a3e;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+ 
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #eee8d8;
+      vertical-align: middle;
+    }
+ 
+    tr:last-child td {
+      border-bottom: none;
+    }
+ 
+    /* Badge thể loại */
+    .badge {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      background: #f0ebe0;
+      color: #6b5a3e;
+    }
+ 
+    /* Nút Xóa */
+    .btn-xoa {
+      background: none;
+      border: 1px solid #d4c9b0;
+      border-radius: 4px;
+      padding: 4px 10px;
+      font-size: 12px;
+      color: #a05a3a;
+      cursor: pointer;
+    }
+ 
+    .btn-xoa:hover {
+      background: #fdf0e8;
+    }
+ 
+    /* Dòng thông báo khi không có sách */
+    .empty {
+      text-align: center;
+      padding: 2rem;
+      color: #a89070;
+      font-size: 13px;
+    }
+     #thongBao {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      display: none;
+    }
+ 
+    .tb-loi {
+      background: #fde8e8;
+      color: #a03030;
+      border: 1px solid #f5c0c0;
+    }
+ 
+    .tb-ok {
+      background: #e8f5e9;
+      color: #2e7d32;
+      border: 1px solid #b8ddb9;
+    }
