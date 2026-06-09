@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css" />
 </head>
+<body>
     <!-- HEADER -->
   <div class="header">
     <h1>📚 Quản Lý Thư Viện</h1>
@@ -66,6 +67,7 @@
               <th>Tác giả</th>
               <th>Thể loại</th>
               <th>Năm</th>
+              <th>Trạng Thái</th>
               <th></th>
             </tr>
           </thead>
@@ -80,6 +82,42 @@
     </div>
   </div>
  
+<!-- MODAL MƯỢN SÁCH -->
+  <div id="modalMuon" style="display:none; position:fixed; inset:0;
+       background:rgba(0,0,0,0.4); z-index:999;">
+    <div style="background:#fff; border-radius:10px; padding:1.5rem;
+                width:340px; box-shadow:0 8px 32px rgba(0,0,0,0.15);
+                margin:auto; margin-top:15%;">
+
+      <h2 style="font-size:15px; margin-bottom:1rem; color:#2c2416;">📖 Mượn sách</h2>
+
+      <label style="font-size:13px; color:#6b5a3e;">Tên người mượn</label>
+      <input type="text" id="inputNguoiMuon" placeholder="Nhập tên người mượn..."
+             style="width:100%; padding:8px 10px; margin-top:4px; margin-bottom:12px;
+                    border:1px solid #d4c9b0; border-radius:6px; font-size:14px;
+                    background:#faf8f4; outline:none;"/>
+
+      <label style="font-size:13px; color:#6b5a3e;">Ngày mượn</label>
+      <input type="date" id="inputNgayMuon"
+             style="width:100%; padding:8px 10px; margin-top:4px; margin-bottom:1.5rem;
+                    border:1px solid #d4c9b0; border-radius:6px; font-size:14px;
+                    background:#faf8f4; outline:none;"/>
+
+      <div style="display:flex; gap:8px;">
+        <button onclick="xacNhanMuon()"
+                style="flex:1; padding:9px; background:#2c2416; color:#f5f0e8;
+                       border:none; border-radius:6px; font-size:14px; cursor:pointer;">
+          Xác nhận mượn
+        </button>
+        <button onclick="dongModal()"
+                style="flex:1; padding:9px; background:#f0ebe0; color:#2c2416;
+                       border:none; border-radius:6px; font-size:14px; cursor:pointer;">
+          Huỷ
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script src="app.js"></script>
 </body>
 </html>

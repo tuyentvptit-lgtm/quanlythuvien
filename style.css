@@ -228,3 +228,21 @@
       color: #2e7d32;
       border: 1px solid #b8ddb9;
     }
+    /* Badge trạng thái */
+.badge-san-sang {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.badge-dang-muon {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  background: #fff3e0;
+  color: #e65100;
+}
