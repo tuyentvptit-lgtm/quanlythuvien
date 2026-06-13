@@ -1,9 +1,9 @@
-// ===== DỮ LIỆU =====
+//DỮ LIỆU
 let danhSachSach = [];
 let idTiepTheo = 1;
 let idDangMuon = null;
 
-// ===== HÀM 1: Thêm sách =====
+//HÀM 1 Thêm sách
 function themSach() {
   let ten     = document.getElementById("inputTen").value.trim();
   let tacGia  = document.getElementById("inputTacGia").value.trim();
@@ -35,7 +35,7 @@ function themSach() {
   hienThongBao("Thêm sách thành công! 🎉", "ok");
 }
 
-// ===== HÀM 2: Hiển thị danh sách =====
+//HÀM 2 Hiển thị danh sách
 function hienThiDanhSach(mangSach) {
   let bang = document.getElementById("bangSach");
 
@@ -80,7 +80,7 @@ function hienThiDanhSach(mangSach) {
   bang.innerHTML = html;
 }
 
-// ===== HÀM 3: Xóa sách =====
+// HÀM 3 Xóa sách
 function xoaSach(id) {
   danhSachSach = danhSachSach.filter(function(sach) {
     return sach.id !== id;
@@ -90,7 +90,7 @@ function xoaSach(id) {
   hienThongBao("Đã xóa sách.", "ok");
 }
 
-// ===== HÀM 4: Tìm kiếm =====
+//HÀM 4 Tìm kiếm
 function timKiem() {
   let tuKhoa = document.getElementById("inputTimKiem").value.trim().toLowerCase();
 
@@ -110,7 +110,7 @@ function timKiem() {
   hienThiDanhSach(ketQua);
 }
 
-// ===== HÀM 5: Cập nhật thống kê =====
+//HÀM 5 Cập nhật thống kê
 function capNhatThongKe() {
   document.getElementById("tongSach").innerText = danhSachSach.length;
 
@@ -123,7 +123,7 @@ function capNhatThongKe() {
   document.getElementById("tongTheLoai").innerText = cacTheLoai.length;
 }
 
-// ===== HÀM 6: Xoá form =====
+// HÀM 6 Xoá form
 function xoaForm() {
   document.getElementById("inputTen").value     = "";
   document.getElementById("inputTacGia").value  = "";
@@ -131,7 +131,7 @@ function xoaForm() {
   document.getElementById("inputNam").value     = "";
 }
 
-// ===== HÀM 7: Hiện thông báo =====
+//HÀM 7 Hiện thông báo
 function hienThongBao(noiDung, loai) {
   let hop = document.getElementById("thongBao");
   hop.innerText     = noiDung;
@@ -142,7 +142,7 @@ function hienThongBao(noiDung, loai) {
   }, 3000);
 }
 
-// ===== HÀM 8: Mở modal mượn =====
+//HÀM 8 Mở modal mượn
 function moModalMuon(id) {
   idDangMuon = id;
   let homNay = new Date().toISOString().split("T")[0];
@@ -151,7 +151,7 @@ function moModalMuon(id) {
   document.getElementById("modalMuon").style.display = "flex";
 }
 
-// ===== HÀM 9: Xác nhận mượn =====
+//HÀM 9 Xác nhận mượn
 function xacNhanMuon() {
   let nguoiMuon = document.getElementById("inputNguoiMuon").value.trim();
   let ngayMuon  = document.getElementById("inputNgayMuon").value;
@@ -176,7 +176,7 @@ function xacNhanMuon() {
   hienThongBao(`Đã ghi nhận "${nguoiMuon}" mượn sách!`, "ok");
 }
 
-// ===== HÀM 10: Trả sách =====
+//HÀM 10 Trả sách
 function traSach(id) {
   for (let i = 0; i < danhSachSach.length; i++) {
     if (danhSachSach[i].id === id) {
@@ -191,12 +191,12 @@ function traSach(id) {
   hienThongBao("Đã trả sách thành công!", "ok");
 }
 
-// ===== HÀM 11: Đóng modal =====
+//HÀM 11 Đóng modal
 function dongModal() {
   document.getElementById("modalMuon").style.display = "none";
   idDangMuon = null;
 }
 
-// ===== GẮN SỰ KIỆN =====
+//GẮN SỰ KIỆN
 document.getElementById("btnThem").addEventListener("click", themSach);
 document.getElementById("inputTimKiem").addEventListener("input", timKiem);
